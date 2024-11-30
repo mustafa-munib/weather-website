@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes rain {
+  0% {
+    transform: translateY(-100%) translateX(0) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1000%) translateX(20px) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes snow {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1000%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sun-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.6),
+                0 0 60px rgba(255, 255, 0, 0.4),
+                0 0 100px rgba(255, 255, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(255, 255, 0, 0.8),
+                0 0 80px rgba(255, 255, 0, 0.6),
+                0 0 120px rgba(255, 255, 0, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.6),
+                0 0 60px rgba(255, 255, 0, 0.4),
+                0 0 100px rgba(255, 255, 0, 0.2);
+  }
+}
+
+@keyframes wind {
+  0% {
+    transform: translateX(-100%) scaleY(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scaleY(0.8);
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) scaleY(1);
+    opacity: 0;
+  }
+}
+
+@keyframes leaf-spin {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0);
+  }
+  25% {
+    transform: rotate(90deg) translateX(10px) translateY(-10px);
+  }
+  50% {
+    transform: rotate(180deg) translateX(0) translateY(0);
+  }
+  75% {
+    transform: rotate(270deg) translateX(-10px) translateY(10px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0) translateY(0);
+  }
+}
+
+.animate-rain {
+  animation: rain linear infinite;
+}
+
+.animate-snow {
+  animation: snow linear infinite;
+}
+
+.animate-sun-pulse {
+  animation: sun-pulse 3s ease-in-out infinite;
+}
+
+.animate-wind {
+  animation: wind 3s linear infinite;
+}
+
+.animate-leaf {
+  animation: leaf-spin 3s linear infinite;
+}
